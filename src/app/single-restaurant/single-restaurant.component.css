@@ -1,0 +1,20 @@
+
+/* This will style any <img> element in .parent div */
+.img-block img {
+    height: 60vh;
+    width: 100%;
+    object-fit: cover;
+}
+
+.card {
+  border: none !important;
+  border-radius: 0px !important;
+  top: 0;
+  transition: top ease 0.5s;
+  position: relative !important;
+}
+
+.card:hover {
+  top: -6px;
+  cursor: pointer;
+}

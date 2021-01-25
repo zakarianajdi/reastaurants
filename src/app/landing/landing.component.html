@@ -1,0 +1,25 @@
+<div class="row" style="height: 100vh; margin: 0px;">
+  <div class="col-md-5" style="padding: 20px; height: 100vh; overflow: auto;">
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="basic-addon1">Search</span>
+      <input type="text" class="form-control form-control-sm" placeholder="Key" (keyup)="onSearchKey($event)">
+    </div>
+    <div *ngFor="let restaurant of data; index as i;" class="card mb-3 shadow-sm" (click)="showRestaurent(restaurant.id)">
+      <div class="row g-0">
+        <div class="col-md-4 imgCadre" style="background-image: url('{{restaurant.img}}')"></div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">{{restaurant.name}}</h5>
+            <p class="card-text">{{restaurant.description | slice:0:100}}...</p>
+            <p class="card-text">{{restaurant.address}}</p>
+            <p class="card-text"><small class="text-muted">{{restaurant.date | date }}</small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-7 block-map">
+    <app-map [restaurants]="data" [lat]="lat" [lng]="lng" [zoom]="zoom"></app-map>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+    <agm-marker *ngFor="let restaurant of data;" 
+        [latitude]="restaurant.latitude" 
+        [longitude]="restaurant.longitude">
+
+        <agm-info-window>
+            <strong>{{restaurant.name}}</strong>
+        </agm-info-window>
+    </agm-marker>
+</agm-map>
